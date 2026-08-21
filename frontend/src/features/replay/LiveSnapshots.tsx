@@ -14,24 +14,27 @@ type LiveSnapshotsProps = {
 
 export function LiveSnapshots({ snapshots, onCapture, onSelect }: LiveSnapshotsProps) {
   return (
-    <section className="timeline live-snapshots panel" aria-label="Captured trace snapshots">
-      <div className="timeline-copy">
-        <span className="eyebrow">Local investigation</span>
-        <h2>{snapshots.length ? `${snapshots.length} snapshots captured` : 'Capture a baseline'}</h2>
-        <p>Run the same trace later, capture it again, then inspect what changed.</p>
+    <section className="history-panel panel" aria-label="Captured trace snapshots">
+      <div className="history-header">
+        <div>
+          <h2>Snapshot history</h2>
+          <span>{snapshots.length ? `${snapshots.length} captured` : 'No baseline captured'}</span>
+        </div>
+        <button className="tool-button" onClick={onCapture}>Capture snapshot</button>
       </div>
-      <button className="primary-button capture-button" onClick={onCapture}>
-        Capture snapshot
-      </button>
-      <div className="snapshot-list">
+      <p className="history-guidance">Capture the same trace at different times to compare record and relationship changes.</p>
+      <ol className="history-list snapshot-list" aria-label="Captured snapshots">
         {snapshots.map((snapshot, index) => (
-          <button key={snapshot.id} onClick={() => onSelect(snapshot)}>
-            <span>#{String(index + 1).padStart(2, '0')}</span>
-            <strong>{snapshot.capturedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</strong>
-          </button>
+          <li key={snapshot.id}>
+            <button className="history-row" onClick={() => onSelect(snapshot)}>
+              <span>#{String(index + 1).padStart(2, '0')}</span>
+              <time>{snapshot.capturedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</time>
+              <strong>{snapshot.graph.nodes.length} records · {snapshot.graph.edges.length} relationships</strong>
+              <i>CAPTURED</i>
+            </button>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   )
 }
-

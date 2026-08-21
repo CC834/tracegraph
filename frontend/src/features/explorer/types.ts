@@ -81,3 +81,7 @@ export type TraceRequest = {
 
 export type ChangeState = 'added' | 'removed' | 'changed' | 'unchanged'
 
+export type GraphSelection =
+  | { kind: 'node'; node: GraphNode }
+  | { kind: 'edge'; edge: GraphEdge }
+  | null
