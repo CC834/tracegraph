@@ -35,7 +35,7 @@ def create_app(settings: Settings | None = None, database: Database | None = Non
         active_database.close()
 
     app = FastAPI(
-        title="TraceGraph API",
+        title="Relational Lineage Explorer API",
         version="1.0.0",
         description="Read-only record lineage for relational databases",
         lifespan=lifespan,

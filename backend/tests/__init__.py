@@ -1,1 +1,1 @@
-"""TraceGraph backend tests."""
+"""Relational Lineage Explorer backend tests."""

@@ -1,8 +1,8 @@
-# TraceGraph Engineering Guide
+# Relational Lineage Explorer Engineering Guide
 
 ## Repository context
 
-TraceGraph is a local-first relational record-lineage explorer. The backend is synchronous Python 3.12+ with FastAPI, Pydantic, SQLAlchemy, SQLite, PostgreSQL, and pytest. The frontend is React 19, TypeScript, Vite, Cytoscape.js, Vitest, and Playwright. `backend/src/tracegraph` contains production Python, `frontend/src` contains the UI, and all committed examples must be synthetic.
+Relational Lineage Explorer is a local-first relational record-lineage explorer. The backend is synchronous Python 3.12+ with FastAPI, Pydantic, SQLAlchemy, SQLite, PostgreSQL, and pytest. The frontend is React 19, TypeScript, Vite, Cytoscape.js, Vitest, and Playwright. `backend/src/tracegraph` contains production Python, `frontend/src` contains the UI, and all committed examples must be synthetic. Existing `tracegraph` package names and environment-variable prefixes are compatibility identifiers, not the public product name.
 
 Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) before changing traversal, connection, snapshot, redaction, or hosted-demo behavior.
 
@@ -53,4 +53,3 @@ Generated directories include `.venv`, `node_modules`, `dist`, coverage, Playwri
 - For traversal changes, cover cycles, self-links, duplicates, composite keys, nulls, limits, inferred-versus-declared evidence, and redaction as relevant.
 - Run targeted checks while iterating, then the full backend and frontend command set before completion. Report skipped PostgreSQL or browser checks honestly.
 - Before any public release, scan the working tree and Git object history for secrets, database/archive files, non-synthetic identifiers, and private-domain terminology.
-

@@ -1,6 +1,6 @@
 # Contributing
 
-TraceGraph welcomes focused fixes and features that make database investigation safer or more explainable.
+Relational Lineage Explorer welcomes focused fixes and features that make database investigation safer or more explainable.
 
 1. Use synthetic fixtures only.
 2. Keep connected databases read-only and local.
@@ -9,4 +9,3 @@ TraceGraph welcomes focused fixes and features that make database investigation 
 5. Explain changes to public API contracts or relationship semantics in the pull request.
 
 Do not include database dumps, connection details, screenshots from real systems, or renamed production schemas in issues or pull requests.
-

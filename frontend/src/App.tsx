@@ -139,7 +139,7 @@ export function App() {
     if (!dataUrl) return
     const anchor = document.createElement('a')
     anchor.href = dataUrl
-    anchor.download = 'tracegraph-record-lineage.png'
+    anchor.download = 'relational-lineage-graph.png'
     anchor.click()
   }
 
@@ -159,9 +159,9 @@ export function App() {
   return (
     <main className="app-shell">
       <header className="app-header">
-        <a className="brand" href="./" aria-label="TraceGraph home">TraceGraph</a>
+        <a className="brand" href="./" aria-label="Relational Lineage Explorer home">Relational Lineage Explorer</a>
         <span className="header-divider" />
-        <span className="product-view">Record Lineage Explorer</span>
+        <span className="product-view">Database investigation workspace</span>
         <div className="header-state">
           <span><i className="state-indicator success" />{config.demoOnly ? 'Synthetic public demo' : `${catalog.dialect} · local database`}</span>
           <strong>READ ONLY</strong>
@@ -205,7 +205,7 @@ export function App() {
               <button className="tool-button compact" onClick={() => zoomBy(1.25)} aria-label="Zoom in">+</button>
               <button className="tool-button" onClick={fitGraph}>Fit</button>
               <span className="toolbar-divider" />
-              <button className="tool-button" onClick={() => download('tracegraph.json', JSON.stringify(graph, null, 2), 'application/json')}>Export JSON</button>
+              <button className="tool-button" onClick={() => download('relational-lineage.json', JSON.stringify(graph, null, 2), 'application/json')}>Export JSON</button>
               <button className="tool-button" onClick={exportPng}>Export PNG</button>
             </div>
           </div>

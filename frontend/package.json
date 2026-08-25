@@ -1,5 +1,5 @@
 {
-  "name": "tracegraph-web",
+  "name": "relational-lineage-explorer-web",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -38,4 +38,3 @@
     "vitest": "^4.0.0"
   }
 }
-

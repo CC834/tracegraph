@@ -1,6 +1,6 @@
-# TraceGraph Architecture
+# Relational Lineage Explorer Architecture
 
-TraceGraph is deliberately small, but it separates framework code, graph rules, and database access so each can be tested independently.
+Relational Lineage Explorer is deliberately small, but it separates framework code, graph rules, and database access so each can be tested independently.
 
 ```text
 React explorer and replay UI
@@ -44,4 +44,3 @@ Self-links are excluded from inference. A declared recursive foreign key may con
 Connected mode is local by default. Credentials stay in process launch configuration. Record values can reach the local browser to support inspection, but secret-like columns are redacted first. No snapshots are persisted by the server, and exports contain only the already-redacted graph response.
 
 Real databases, dumps, investigation output, connection profiles, and generated exports are ignored and must never become fixtures. Tests and documentation use only deterministic synthetic data.
-
